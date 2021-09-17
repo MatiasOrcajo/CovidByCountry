@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+        
+<% for (const pais of paises) {%>
+    <% if(pais.abbreviation !== 'undefined'){ %>
+            <div class="col-lg-3">
+                <div class="card me-3">
+                    <div class="card-header d-flex flex-column justify-content-center align-items-center">
+                        
+                            <img src="https://www.countryflags.io/<%=pais.abbreviation%>/flat/64.png">
+                        
+                        <%- pais.name -%>
+                    </div>
+                </div>
+            </div> 
+    <% } %> 
+<% } %> 
+        
+    </div>
+</div>
+    
+    
+    
+
+
+
