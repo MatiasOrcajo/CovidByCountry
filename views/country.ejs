@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-10 p-2 p-lg-5" style="border: 1px solid black; border-radius: 20px;">
+            <div class="d-flex align-items-center mb-5">
+                <img src="https://www.countryflags.io/<%=pais.abbreviation%>/flat/64.png">
+                <h1 class="ms-3"><%- pais.name %> </h1>
+            </div>
+            <div>
+                <h5>Cases: <span><%= format(pais.cases) %></span></h5>
+                <h5>Deaths: <span><%= format(pais.deaths) %></span></h5>
+                <h5>Population: <span><%= format(pais.population) %></span></h5>
+                <h5>Updated: <span><%= pais.updated ? pais.updated : 'No data' %></span></h5>
+                <h5>Km2: <span><%= pais.km ? format(pais.km) : 'No data' %></span></h5>
+                <h5>Deaths per km2: <span><%= pais.km ? toFixed(pais.km/pais.deaths) : 'No data' %> </span></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%  function toFixed(num){
+    return num.toFixed(2);
+} 
+
+function format(num){
+    const numberFormat = new Intl.NumberFormat('en-EN');
+    return numberFormat.format(num);
+}
+%> 
