@@ -18,8 +18,10 @@ app.set('layout', './layouts/layout');
 // traigo el archivo indexRoute
 
 const indexRoute = require('./routes/indexRoute');
+const countryRoute = require('./routes/countryRoute');
 
 app.use('/', indexRoute)
+app.use('/:id', countryRoute)
 
 app.listen(port, () => {
     console.log('example')

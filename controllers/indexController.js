@@ -10,9 +10,7 @@ class indexController {
         axios.get('https://covid-api.mmediagroup.fr/v1/cases')
             .then(res =>{
                 r = res.data;
-                let aux = 0;
                 Object.entries(r).forEach(([key, value]) => {
-                        aux++;
                         let name = key;
                         let confirmed = value['All']['confirmed'];
                         let deaths = value['All']['deaths'];
